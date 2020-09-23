@@ -33,6 +33,7 @@ app.use(
 	cookieSession({
 		signed: false,
 		secure: false,
+		secureProxy: false,
 	})
 );
 
