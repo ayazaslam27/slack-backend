@@ -21,15 +21,15 @@ const app = express();
 app.use(
 	cors({
 		credentials: true,
+		origin: "https://slack-e1c5f.firebaseapp.com",
 	})
 );
-
 app.set("trust proxy", true);
 app.use(json());
 app.use(
 	cookieSession({
 		signed: false,
-		secure: true,
+		secure: false,
 	})
 );
 
