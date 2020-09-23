@@ -24,13 +24,13 @@ app.use(
 		origin: "https://slack-e1c5f.firebaseapp.com",
 	})
 );
-app.set("trust proxy", true);
 app.use(json());
 app.use(
 	cookieSession({
 		signed: false,
-		secure: true,
+		secure: false,
 		domain: "https://slack-e1c5f.firebaseapp.com",
+		httpOnly: false,
 	})
 );
 
