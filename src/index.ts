@@ -25,6 +25,7 @@ app.use(
 		origin: "https://slack-e1c5f.firebaseapp.com",
 		allowedHeaders:
 			"X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept, Authorization, Set-Cookie",
+		preflightContinue: true,
 	})
 );
 
