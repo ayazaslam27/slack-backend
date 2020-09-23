@@ -18,12 +18,13 @@ import { getRoomsRouter } from "./routes/rooms";
 import { roomRouter } from "./routes/room";
 
 const app = express();
-// app.use(
-// 	cors({
-// 		credentials: true,
-// 		origin: "https://slack-e1c5f.firebaseapp.com",
-// 	})
-// );
+app.use(
+	cors({
+		credentials: true,
+		methods: "GET,POST",
+		origin: "https://slack-e1c5f.firebaseapp.com",
+	})
+);
 
 app.set("trust proxy", true);
 app.use(json());
@@ -33,18 +34,6 @@ app.use(
 		secure: false,
 	})
 );
-
-app.use((req: Request, res: Response, next: NextFunction) => {
-	res.setHeader(
-		"Access-Control-Allow-Origin",
-		"https://slack-e1c5f.firebaseapp.com"
-	);
-	res.setHeader(
-		"Access-Control-Allow-Headers",
-		"https://slack-e1c5f.firebaseapp.com"
-	);
-	next();
-});
 
 app.use(signupRouter);
 app.use(signinRouter);
