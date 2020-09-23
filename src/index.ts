@@ -19,11 +19,12 @@ import { roomRouter } from "./routes/room";
 
 const app = express();
 app.use(cors());
+app.set("trust proxy", true);
 app.use(json());
 app.use(
 	cookieSession({
 		signed: false,
-		secure: false,
+		secure: true,
 	})
 );
 
