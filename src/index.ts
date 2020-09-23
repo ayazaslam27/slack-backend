@@ -35,8 +35,14 @@ app.use(
 );
 
 app.use((req: Request, res: Response, next: NextFunction) => {
-	res.setHeader("Access-Control-Allow-Origin", "*");
-	res.setHeader("Access-Control-Allow-Headers", "*");
+	res.setHeader(
+		"Access-Control-Allow-Origin",
+		"https://slack-e1c5f.firebaseapp.com"
+	);
+	res.setHeader(
+		"Access-Control-Allow-Headers",
+		"https://slack-e1c5f.firebaseapp.com"
+	);
 	next();
 });
 
