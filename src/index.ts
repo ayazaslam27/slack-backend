@@ -29,8 +29,7 @@ app.use(json());
 app.use(
 	cookieSession({
 		signed: false,
-		secure: true,
-		domain: " https://slack-backend.herokuapp.com",
+		secure: false,
 	})
 );
 
