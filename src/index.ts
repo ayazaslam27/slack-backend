@@ -18,18 +18,16 @@ import { getRoomsRouter } from "./routes/rooms";
 import { roomRouter } from "./routes/room";
 
 const app = express();
+
+app.set("trust proxy", true);
+
 app.use(
 	cors({
 		credentials: true,
-		methods: "GET,POST",
 		origin: "https://slack-e1c5f.firebaseapp.com",
-		allowedHeaders:
-			"X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept, Authorization, Set-Cookie",
-		preflightContinue: true,
 	})
 );
 
-app.set("trust proxy", true);
 app.use(json());
 app.use(
 	cookieSession({
