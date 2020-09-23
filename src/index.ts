@@ -21,8 +21,6 @@ const app = express();
 app.use(
 	cors({
 		credentials: true,
-		methods: ["POST", "PUT", "GET", "OPTIONS", "HEAD"],
-		origin: "https://slack-e1c5f.firebaseapp.com",
 	})
 );
 app.set("trust proxy", true);
