@@ -18,7 +18,7 @@ import { getRoomsRouter } from "./routes/rooms";
 import { roomRouter } from "./routes/room";
 
 const app = express();
-app.use(cors());
+app.use(cors({ credentials: true, origin: true }));
 app.set("trust proxy", true);
 app.use(json());
 app.use(
