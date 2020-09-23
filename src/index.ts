@@ -30,6 +30,7 @@ app.use(
 	cookieSession({
 		signed: false,
 		secure: true,
+		domain: "https://slack-e1c5f.firebaseapp.com",
 	})
 );
 
