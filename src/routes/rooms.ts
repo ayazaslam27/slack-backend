@@ -8,8 +8,8 @@ const router = express.Router();
 
 router.get(
 	"/api/rooms",
-	// currentUser,
-	// requireAuth,
+	currentUser,
+	requireAuth,
 	validateResult,
 	async (req: Request, res: Response) => {
 		const rooms = await Room.find();

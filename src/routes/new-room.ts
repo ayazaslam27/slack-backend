@@ -9,8 +9,8 @@ const router = express.Router();
 
 router.post(
 	"/api/room/create",
-	// currentUser,
-	// requireAuth,
+	currentUser,
+	requireAuth,
 	[body("name").not().isEmpty().withMessage("Room title is required")],
 	validateResult,
 	async (req: Request, res: Response) => {

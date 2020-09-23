@@ -10,8 +10,8 @@ const router = express.Router();
 
 router.get(
 	"/api/room",
-	// currentUser,
-	// requireAuth,
+	currentUser,
+	requireAuth,
 	[
 		query("roomId")
 			.notEmpty()

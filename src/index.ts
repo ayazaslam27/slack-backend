@@ -1,4 +1,4 @@
-import express from "express";
+import express, { Request, Response, NextFunction } from "express";
 import "express-async-errors";
 import { json } from "body-parser";
 import cors from "cors";
@@ -18,12 +18,13 @@ import { getRoomsRouter } from "./routes/rooms";
 import { roomRouter } from "./routes/room";
 
 const app = express();
-app.use(
-	cors({
-		credentials: true,
-		origin: "https://slack-e1c5f.firebaseapp.com",
-	})
-);
+// app.use(
+// 	cors({
+// 		credentials: true,
+// 		origin: "https://slack-e1c5f.firebaseapp.com",
+// 	})
+// );
+
 app.set("trust proxy", true);
 app.use(json());
 app.use(
@@ -32,6 +33,12 @@ app.use(
 		secure: false,
 	})
 );
+
+app.use((req: Request, res: Response, next: NextFunction) => {
+	res.setHeader("Access-Control-Allow-Origin", "*");
+	res.setHeader("Access-Control-Allow-Headers", "*");
+	next();
+});
 
 app.use(signupRouter);
 app.use(signinRouter);

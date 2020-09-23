@@ -13,8 +13,8 @@ const router = express.Router();
 
 router.post(
 	"/api/message/create",
-	// currentUser,
-	// requireAuth,
+	currentUser,
+	requireAuth,
 	[
 		body("roomId")
 			.not()
