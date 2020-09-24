@@ -34,7 +34,6 @@ app.use(
 		signed: false,
 		secure: true,
 		sameSite: "lax",
-		domain: "*.herokuapp.com",
 	})
 );
 
