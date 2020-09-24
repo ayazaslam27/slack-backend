@@ -33,6 +33,8 @@ app.use(
 	cookieSession({
 		signed: false,
 		secure: true,
+		sameSite: "none",
+		domain: "https://slack-clone-frontend.herokuapp.com/",
 	})
 );
 
