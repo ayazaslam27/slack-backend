@@ -23,7 +23,7 @@ router.post(
 
 		getIO().emit("message", {
 			action: "new-room",
-			message: room,
+			data: room,
 		});
 
 		res.status(201).send(room);
