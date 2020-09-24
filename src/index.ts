@@ -34,7 +34,7 @@ app.use(
 		signed: false,
 		secure: true,
 		sameSite: "lax",
-		domain: "https://slack-backend.herokuapp.com",
+		domain: "https://slack-clone-frontend.herokuapp.com",
 		secureProxy: true,
 	})
 );
