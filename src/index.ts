@@ -25,7 +25,6 @@ app.use(
 	cors({
 		credentials: true,
 		origin: "https://slack-e1c5f.firebaseapp.com",
-		exposedHeaders: ["Set-Cookie"],
 	})
 );
 
@@ -35,7 +34,6 @@ app.use(
 		signed: false,
 		secure: true,
 		sameSite: "none",
-		domain: "https://slack-e1c5f.firebaseapp.com",
 	})
 );
 
