@@ -3,6 +3,7 @@ import { body } from "express-validator";
 import { requireAuth } from "../common/middleware/require-auth";
 import { validateResult } from "../common/middleware/validate-request";
 import { currentUser } from "../common/middleware/current-user";
+import { getIO } from "../services/socket";
 import { Room, Message } from "../models/room";
 
 const router = express.Router();
@@ -19,6 +20,11 @@ router.post(
 		const room = Room.build({ name, messages });
 
 		await room.save();
+
+		getIO().emit("message", {
+			action: "new-room",
+			message: room,
+		});
 
 		res.status(201).send(room);
 	}
