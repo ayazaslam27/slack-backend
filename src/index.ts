@@ -35,6 +35,7 @@ app.use(
 		signed: false,
 		secure: true,
 		sameSite: "none",
+		domain: "https://slack-backend.herokuapp.com",
 	})
 );
 
