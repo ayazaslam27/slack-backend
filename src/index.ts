@@ -19,7 +19,7 @@ import { roomRouter } from "./routes/room";
 
 const app = express();
 
-app.set("trust proxy", 1);
+app.set("trust proxy", true);
 
 app.use(
 	cors({
@@ -33,6 +33,8 @@ app.use(
 	cookieSession({
 		signed: false,
 		secure: true,
+		sameSite: "lax",
+		domain: ".herokuapp.com",
 		secureProxy: true,
 	})
 );
