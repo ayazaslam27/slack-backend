@@ -35,7 +35,7 @@ app.use(
 		signed: false,
 		secure: true,
 		sameSite: "none",
-		domain: "https://slack-backend.herokuapp.com",
+		domain: "https://slack-e1c5f.firebaseapp.com",
 	})
 );
 
