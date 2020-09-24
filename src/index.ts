@@ -24,7 +24,7 @@ app.set("trust proxy", true);
 app.use(
 	cors({
 		credentials: true,
-		origin: "https://slack-e1c5f.firebaseapp.com",
+		origin: "https://slack-clone-frontend.herokuapp.com",
 	})
 );
 
@@ -33,7 +33,6 @@ app.use(
 	cookieSession({
 		signed: false,
 		secure: true,
-		sameSite: "none",
 	})
 );
 
