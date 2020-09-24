@@ -19,7 +19,7 @@ import { roomRouter } from "./routes/room";
 
 const app = express();
 
-app.set("trust proxy", true);
+app.set("trust proxy", 1);
 
 app.use(
 	cors({
@@ -33,8 +33,6 @@ app.use(
 	cookieSession({
 		signed: false,
 		secure: true,
-		sameSite: "lax",
-		domain: "https://slack-clone-frontend.herokuapp.com",
 		secureProxy: true,
 	})
 );
